@@ -4,8 +4,13 @@ import React from 'react';
 const Button = (props) => {
     return (
         <div className="inputTodo">
-            <form onSubmit={props.handlSumit}>
-                <input type="text" onChange={props.handleChange}/>
+            <form onSubmit={props.handleSubmit}>
+                <input 
+                    type="text"
+                    name="inputTodo"
+                    value={props.inputTodo}
+                    onChange={props.handleChange}
+                />
                 <button className="button">ADD</button>
             </form>
         </div>
