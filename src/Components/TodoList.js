@@ -17,9 +17,21 @@ class TodoList extends Component {
     // create a todo component from the available todos
     makeTodoComponents = () => {
         const todoComponents = this.state.todos.map(todo => {
-            return <TodoItem key={todo.todoText} todoText={todo.todoText} />
+            return <TodoItem 
+                        key={todo.todoText} 
+                        todoText={todo.todoText}
+                        handleDelete={this.handleDelete} 
+                    />
         });
         return todoComponents;
+    }
+
+    handleDelete = (todoId) => {
+        const updatedTodos = this.state.todos.filter(oldTodo =>{
+            return oldTodo.todoText !== todoId;
+        });
+
+        this.setState({ todos: updatedTodos });
     }
 
     render() {
