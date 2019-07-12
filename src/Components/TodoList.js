@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import TodoItem from './TodoItem';
+import Button from './Button';
 
 // This component must have a state
 class TodoList extends Component {
@@ -18,9 +19,9 @@ class TodoList extends Component {
     makeTodoComponents = () => {
         const todoComponents = this.state.todos.map(todo => {
             return <TodoItem 
-                        key={todo.todoText} 
-                        todoText={todo.todoText}
-                        handleDelete={this.handleDelete} 
+                        key={ todo.todoText } 
+                        todoText={ todo.todoText }
+                        handleDelete={ this.handleDelete } 
                     />
         });
         return todoComponents;
@@ -31,13 +32,28 @@ class TodoList extends Component {
             return oldTodo.todoText !== todoId;
         });
 
-        this.setState({ todos: updatedTodos });
+        this.setState({ todos: updatedTodos }); // setState will again make render be called by the React library
+    }
+
+    handleChange = (event) => {
+        console.log("working");
+        //const newTodo = event.target.value;
+       // const todoObject = { todoText: newTodo };
+        //this.setState({ todos: [...this.state.todos, todoObject]  });
+    }
+    
+    handlSubmit = (event) => {
+        event.preventDefault();
+       // const newTodo = event.target.value;
+        //const todoObject = { todoText: newTodo };
+       // this.setState({ todos: [...this.state.todos, todoObject]  });
     }
 
     render() {
         return (
             <div className="todoList">
-             { this.makeTodoComponents() }
+             { this.state.todos.length ? this.makeTodoComponents() : <p className="noTodos">You have no Todos yet!</p> }
+             <Button handleChange={this.handleChange}/>
             </div>
         );
     }

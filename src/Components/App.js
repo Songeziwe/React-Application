@@ -1,7 +1,7 @@
 import React from 'react';
 import TodoList from './TodoList';
 import Header from './Header';
-import Button from './Button';
+//import Button from './Button';
 
 
 // Stateless Functional Component
@@ -13,8 +13,7 @@ const App = () => {
     return (
         <React.Fragment>
             <Header />
-            <TodoList />
-            <Button />                             
+            <TodoList />                             
         </React.Fragment> 
     );
 }

@@ -1,11 +1,11 @@
 import React from 'react';
 
 // contain a button and an input element
-const Button = () => {
+const Button = (props) => {
     return (
         <div className="inputTodo">
-            <form>
-                <input type="text"/>
+            <form onSubmit={props.handlSumit}>
+                <input type="text" onChange={props.handleChange}/>
                 <button className="button">ADD</button>
             </form>
         </div>
