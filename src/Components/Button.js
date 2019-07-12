@@ -6,7 +6,7 @@ const Button = () => {
         <div className="inputTodo">
             <form>
                 <input type="text"/>
-                <button>addTodo</button>
+                <button className="button">ADD</button>
             </form>
         </div>
     );

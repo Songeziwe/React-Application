@@ -4,12 +4,28 @@ import TodoItem from './TodoItem';
 // This component must have a state
 class TodoList extends Component {
     // omitted the constructor
-    state = {}
-    
+    state = {
+        todos:[
+            { todoText: "make bed"},
+            { todoText: "make tea" },
+            { todoText: "study maths" },
+            { todoText: "start capstone project" },
+            { todoText: "pay bills" },
+            { todoText:  "call friend" }
+        ]
+    }
+    // create a todo component from the available todos
+    makeTodoComponents = () => {
+        const todoComponents = this.state.todos.map(todo => {
+            return <TodoItem key={todo.todoText} todoText={todo.todoText} />
+        });
+        return todoComponents;
+    }
+
     render() {
         return (
             <div className="todoList">
-                <TodoItem />
+             { this.makeTodoComponents() }
             </div>
         );
     }

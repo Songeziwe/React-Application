@@ -1,0 +1,44 @@
+body {
+    background-color: #eee;
+    margin: 0px;
+    padding: 0px;
+}
+#root {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+}
+header {
+    margin: 0px;
+    padding: 5px;
+    background-color: #E0BA2D;
+    width: 100%;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+.todoItem {
+    text-align: center;
+    margin: 5px;
+    padding: 5px;
+    background-color: #5C4AA0;
+    color:yellow;
+    font-size: 20px;
+    font-style: oblique;
+
+}
+.todoList {
+    background-color: whitesmoke;
+    width: 50%;
+    margin: 100px auto;
+}
+.inputTodo {
+    float: right;
+    padding: 10px;
+    margin-right: 50px;
+    background-color: #E0BA2D; 
+}
+
+.button {
+    margin: 10px;
+}
